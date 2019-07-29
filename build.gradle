@@ -1,0 +1,36 @@
+plugins {
+    id 'org.springframework.boot' version '2.1.6.RELEASE'
+    id 'java'
+    id 'maven-publish'
+}
+
+uploadArchives {
+    repositories {
+        mavenLocal()
+    }
+}
+
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'maven'
+
+group = 'com.vocera.cloud'
+version = '1.0.0.RELEASE'
+sourceCompatibility = '11'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+bootJar {
+    enabled = false
+}
+
+jar {
+    enabled = true
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.hibernate:hibernate-validator:6.0.17.Final'
+}
