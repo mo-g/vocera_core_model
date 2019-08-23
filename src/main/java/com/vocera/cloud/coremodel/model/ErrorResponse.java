@@ -18,9 +18,12 @@ public class ErrorResponse {
 
     private List<String> details;
 
-    public ErrorResponse(String message, List<String> details) {
+    private String code;
+
+    public ErrorResponse(String message, List<String> details, String code) {
         this.message = message;
         this.details = details;
+        this.code = code;
     }
 
     public String getMessage() {
@@ -37,5 +40,13 @@ public class ErrorResponse {
 
     public void setDetails(List<String> details) {
         this.details = details;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 }

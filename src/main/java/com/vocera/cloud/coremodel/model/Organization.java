@@ -6,9 +6,13 @@
 
 package com.vocera.cloud.coremodel.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.vocera.cloud.coremodel.constants.Constraints;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ForeignKey;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
@@ -30,11 +34,11 @@ import java.util.List;
         uniqueConstraints = {
                 @UniqueConstraint(
                         columnNames = {"name", "health_system_name"},
-                        name = "UK_name_health_system_name"
+                        name = Constraints.UK_NAME_HEALTH_SYSTEM_NAME
                 ),
                 @UniqueConstraint(
                         columnNames = "license_key",
-                        name = "UK_license_key"
+                        name = Constraints.UK_LICENSE_KEY
                 )
         }
 )
@@ -55,7 +59,7 @@ public class Organization extends BaseEntity {
     private String licenseKey;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "admin_id")
+    @JoinColumn(name = "admin_id", foreignKey = @ForeignKey(name = Constraints.FK_ADMIN))
     private Admin admin;
 
     @Column(name = "active", nullable = false)
@@ -77,6 +81,7 @@ public class Organization extends BaseEntity {
     @NotBlank(message = "Please enter a valid Domain name.")
     private String domain;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "affiliationFrom")
     private List<Affiliation> affiliations;
 

@@ -47,6 +47,23 @@ public enum AffiliationStatus {
         this.status = status;
     }
 
+    public static AffiliationStatus getStatus(String status) {
+        switch (status) {
+            case "active_request":
+                return ACTIVE_REQUEST;
+            case "affiliated":
+                return AFFILIATED;
+            case "rejected":
+                return REJECTED;
+            case "affiliation_revoke_requested":
+                return AFFILIATION_REVOKE_REQUESTED;
+            case "affiliation_revoked":
+                return AFIILIATION_REVOKED;
+            default:
+                return null;
+        }
+    }
+
     public String getStatus() {
         return status;
     }
