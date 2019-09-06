@@ -39,7 +39,12 @@ public enum AffiliationStatus {
     /**
      * Affiliation revoke request is successful and both organizations are no longer affiliated with each other.
      */
-    AFIILIATION_REVOKED("affiliation_revoked");
+    AFFILIATION_REVOKED("affiliation_revoked"),
+
+    /**
+     * Not Affiliated.
+     */
+    NONE("none");
 
     private String status;
 
@@ -58,9 +63,9 @@ public enum AffiliationStatus {
             case "affiliation_revoke_requested":
                 return AFFILIATION_REVOKE_REQUESTED;
             case "affiliation_revoked":
-                return AFIILIATION_REVOKED;
+                return AFFILIATION_REVOKED;
             default:
-                return null;
+                return NONE;
         }
     }
 
