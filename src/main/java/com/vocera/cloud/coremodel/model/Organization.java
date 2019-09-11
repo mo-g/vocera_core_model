@@ -85,6 +85,13 @@ public class Organization extends BaseEntity {
     @OneToMany(mappedBy = "affiliationFrom")
     private List<Affiliation> affiliations;
 
+    public Organization() {
+    }
+
+    public Organization(Long id) {
+        this.setId(id);
+    }
+
     public String getName() {
         return name;
     }
