@@ -36,9 +36,16 @@ public enum AffiliationStatus {
     CANCELLED("CANCELLED"),
 
     /**
-     * Affiliation revoke is successful and both organizations are no longer affiliated with each other.
+     * Affiliation revoke is successful where revoke is initialized by organization_from.
+     * Both organizations are no longer affiliated with each other.
      */
-    REVOKED("REVOKED"),
+    REVOKED_FROM("REVOKED_FROM"),
+
+    /**
+     * Affiliation revoke is successful where revoke is initialized by organization_from.
+     * Both organizations are no longer affiliated with each other.
+     */
+    REVOKED_TO("REVOKED_TO"),
 
     /**
      * Organization has been Unregistered from the affiliation network.
