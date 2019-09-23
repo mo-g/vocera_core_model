@@ -18,7 +18,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotBlank;
 import java.util.List;
 
@@ -29,19 +28,7 @@ import java.util.List;
  * @author Rohit Phatak
  */
 @Entity
-@Table(
-        name = "organization",
-        uniqueConstraints = {
-                @UniqueConstraint(
-                        columnNames = {"name", "health_system_name"},
-                        name = Constraints.UK_NAME_HEALTH_SYSTEM_NAME
-                ),
-                @UniqueConstraint(
-                        columnNames = "license_key",
-                        name = Constraints.UK_LICENSE_KEY
-                )
-        }
-)
+@Table(name = "organization")
 @SequenceGenerator(name = "federation_gen", sequenceName = "organization_sequence", allocationSize = 1)
 public class Organization extends BaseEntity {
     /**

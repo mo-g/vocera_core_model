@@ -49,8 +49,16 @@ public enum AffiliationStatus {
 
     /**
      * Organization has been Unregistered from the affiliation network.
+     * For the affiliation this unregister is performed from the organization which has initiated a request for
+     * affiliation.
      */
-    UNREGISTERED("UNREGISTERED"),
+    UNREGISTERED_FROM("UNREGISTERED_FROM"),
+
+    /**
+     * Organization has been Unregistered from the affiliation network.
+     * For the affiliation this unregister is performed from the organization which has been sent an affiliation request
+     */
+    UNREGISTERED_TO("UNREGISTERED_TO"),
 
     /**
      * Organization has been removed using the three dots menu from Active Requests.
