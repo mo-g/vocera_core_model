@@ -41,10 +41,6 @@ public class Organization extends BaseEntity {
     @NotBlank(message = "Please enter a valid Health System Name")
     private String healthSystemName;
 
-    @Column(name = "license_key")
-    @NotBlank(message = "Please enter a valid license key")
-    private String licenseKey;
-
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "admin_id", foreignKey = @ForeignKey(name = Constraints.FK_ADMIN))
     private Admin admin;
@@ -93,14 +89,6 @@ public class Organization extends BaseEntity {
 
     public void setHealthSystemName(String healthSystemName) {
         this.healthSystemName = healthSystemName;
-    }
-
-    public String getLicenseKey() {
-        return licenseKey;
-    }
-
-    public void setLicenseKey(String licenseKey) {
-        this.licenseKey = licenseKey;
     }
 
     public Admin getAdmin() {
