@@ -68,6 +68,8 @@ public class Organization extends BaseEntity {
     @OneToMany(mappedBy = "affiliationFrom")
     private List<Affiliation> affiliations;
 
+    private String commonDomain;
+
     public Organization() {
     }
 
@@ -153,5 +155,13 @@ public class Organization extends BaseEntity {
 
     public void setState(String state) {
         this.state = state;
+    }
+
+    public String getCommonDomain() {
+        return commonDomain;
+    }
+
+    public void setCommonDomain(String commonDomain) {
+        this.commonDomain = commonDomain;
     }
 }
