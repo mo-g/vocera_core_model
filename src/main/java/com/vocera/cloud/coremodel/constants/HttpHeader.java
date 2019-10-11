@@ -13,6 +13,5 @@ package com.vocera.cloud.coremodel.constants;
  */
 public interface HttpHeader {
     String ORGANIZATION_ID = "organization-id";
-    String LICENSE_KEY = "license-key";
-
+    String DOMAIN_NAME = "domain-name";
 }
