@@ -1,0 +1,9 @@
+language: java
+
+before_script: 
+  - chmod a+x gradlew
+
+jdk: 
+  - openjdk11
+
+script: gradle clean install
